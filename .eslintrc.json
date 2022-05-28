@@ -1,0 +1,61 @@
+{
+    "root":true,
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {
+        "no-alert": "off",
+        "no-plusplus": "off",
+        "no-console": "off",
+        "prefer-const": "off",
+        "arrow-body-style": "off",
+        "no-underscore-dangle": "off",
+        "camelcase": "off",
+        "no-shadow": "warn",
+        "no-use-before-define": "warn",
+        "no-restricted-syntax": ["off", "ForOfStatement", "ForInStatement"],
+        "no-fallthrough": "off",
+        "guard-for-in": "warn",
+        "dot-notation": "warn",
+        "import/prefer-default-export": "warn",
+        "react/react-in-jsx-scope": "warn",
+        "react/jsx-filename-extension": "off",
+        "react/prop-types": "off",
+        "react/destructuring-assignment": "off",
+        "valid-typeof": [
+            "error",
+            {
+                "requireStringLiterals": false
+            }
+        ],
+        "func-names": ["error", "as-needed"],
+
+        "prettier/prettier": ["error", {
+            "singleQuote": true,
+            "printWidth": 80,
+            "trailingComma": "es5",
+            "semi": true,
+            "useTabs": false,
+            "tabWidth": 2,
+            "bracketSameLine": true
+        }]
+    }
+}

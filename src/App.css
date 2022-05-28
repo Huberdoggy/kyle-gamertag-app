@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&family=Inter:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+body {
+  margin: 0;
+  font-family: 'Hind Siliguri', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #101113;
+  height: 150px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar > img {
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  border: 1px solid ghostwhite;
+  margin-left: 30px;
+}
+
+#card-heading {
+  color: ghostwhite;
+  margin-left: auto;
+  margin-right: 30px;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#card-heading:hover {
+  color: rgb(20, 217, 75);
+}
+
+.gt-section {
+  display: flex;
+ justify-content: space-evenly;
+  box-shadow: 4px 5px 23px 9px rgba(0,0,0,0.57) inset;
+  background-color: ghostwhite;
+}
+
+.gt-section > img {
+  height: 600px;
+  width: auto;
+  align-self: end;
+  margin-bottom: -8rem; /*For 3D effect? remove if this clashes with floats later on...*/
+}
+
+#boot-animation {
+  width: 650px;
+  height: 366px;
+  align-self: center;
+  /*margin-left: auto;*/
+}
+
+#bio {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  line-height: 20px;
+  text-align: center;
+  /*margin-left: auto;*/
 }
 
-.App-link {
-  color: #61dafb;
+#bio h3 > span {
+  font-weight: 400;
+  color: rgb(29, 138, 42);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#bio h3:nth-of-type(1) {
+  margin-top: auto;
 }
+
+#bio h1 {
+  color: rgb(29, 138, 42);
+  font-weight: 900;
+}
+
+#gt-icon {
+  display: inline-block;
+  margin-bottom: -25px;
+  margin-right: -1px;
+}
+
+#offline {
+  color: red;
+}
+
+@media screen and (max-width: 990px) {
+#gt-icon, #bio {
+  display: none;
+}
+}
+
+
+
+
+
+

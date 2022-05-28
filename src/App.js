@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+/* eslint-disable no-unused-vars */
 import './App.css';
+import { Navbar } from './components/navbar/Navbar';
+import { GamertagSection } from './components/gamertag-section/GamertagSection';
+import gamertagData from './components/gamertag-section/GamertagData';
+import { getAPIData } from './components/gamertag-section/GamertagFetch';
 
 function App() {
+  const bio_items = gamertagData.map((item) => {
+    return (
+      <GamertagSection
+        key={item.id}
+        name={item.name}
+        bio={item.bio}
+        location={item.location}
+        gender={item.gender}
+        online={item.online}
+      />
+    );
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Navbar />
+      {bio_items}
+      <div className="container">
+        <h1>Recent Games</h1>
+      </div>
     </div>
   );
 }
