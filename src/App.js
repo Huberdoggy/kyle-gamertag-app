@@ -12,6 +12,11 @@ import { RecentFeed } from './components/recent-feed/RecentFeed';
 
 function App() {
   const [activityArray, SetActivityArray] = useState([]);
+  const [click, setClick] = useState('');
+
+  const onButtonClick = () => {
+    setClick(getXboxRecentFeed);
+  };
 
   function addObjToArray(dataObj) {
     SetActivityArray((prevArray) => {
@@ -20,7 +25,6 @@ function App() {
   }
 
   async function getXboxRecentFeed() {
-    // flipFlag();
     let cheevoObj;
     const recentActivity = await runFetch(recentActivityEndpoint);
     for (let i = 0; i < 4; i++) {
@@ -61,12 +65,11 @@ function App() {
   });
 
   return (
-    <div className="container">
-      <Navbar />
+    <div className="flex-container">
+      <Navbar onButtonClick={onButtonClick} />
       {bio_items}
-      <div className="container">
+      <div>
         {/* eslint-disable-next-line react/button-has-type */}
-        <button onClick={getXboxRecentFeed}>See Recent Activity</button>
         <section className="recent-activity">{recentFeedItems}</section>
       </div>
     </div>
