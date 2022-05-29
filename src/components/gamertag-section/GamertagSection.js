@@ -18,7 +18,7 @@ export function GamertagSection(props) {
         </h3>
         <br />
         <h3>
-          Bio: <span>{props.motto}</span>
+          Motto: <span>{props.motto}</span>
         </h3>
         <br />
         <h3>

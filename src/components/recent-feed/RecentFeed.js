@@ -1,9 +1,9 @@
 export function RecentFeed(props) {
   return (
     <p>
-      {props.achievementDescription}
-      <br />
       {props.description}
+      <br />
+      {props.achievementDescription}
       <br />
       <img
         className="recent-activity--img"
