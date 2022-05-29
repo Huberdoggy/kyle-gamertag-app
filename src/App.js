@@ -1,12 +1,53 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
+import { useState } from 'react';
 import { Navbar } from './components/navbar/Navbar';
 import { GamertagSection } from './components/gamertag-section/GamertagSection';
 import gamertagData from './components/gamertag-section/GamertagData';
-import { getAPIData } from './components/gamertag-section/GamertagFetch';
+import {
+  runFetch,
+  recentActivityEndpoint,
+} from './components/gamertag-section/GamertagFetch';
+import { RecentFeed } from './components/recent-feed/RecentFeed';
 
 function App() {
-  getAPIData();
+  const [activityArray, SetActivityArray] = useState([]);
+
+  function addObjToArray(dataObj) {
+    SetActivityArray((prevArray) => {
+      return [...prevArray, dataObj];
+    });
+  }
+
+  async function getXboxRecentFeed() {
+    // flipFlag();
+    let cheevoObj;
+    const recentActivity = await runFetch(recentActivityEndpoint);
+    for (let i = 0; i < 4; i++) {
+      cheevoObj = {
+        achievementDescription: `${recentActivity[i].achievementDescription}`,
+        description: `${recentActivity[i].description}`,
+        achievementIcon: `${recentActivity[i].achievementIcon}`,
+      };
+      addObjToArray(cheevoObj);
+    }
+  }
+
+  const recentFeedItems = activityArray.map((item, index) => {
+    return (
+      <RecentFeed
+        /* eslint-disable-next-line react/no-array-index-key */
+        key={index}
+        achievementDescription={item.achievementDescription}
+        description={
+          item.description.charAt(0).toUpperCase() +
+          item.description.substring(1)
+        }
+        achievementIcon={item.achievementIcon}
+      />
+    );
+  });
+
   const bio_items = gamertagData.map((item) => {
     return (
       <GamertagSection
@@ -24,7 +65,9 @@ function App() {
       <Navbar />
       {bio_items}
       <div className="container">
-        <h1>Recent Games</h1>
+        {/* eslint-disable-next-line react/button-has-type */}
+        <button onClick={getXboxRecentFeed}>See Recent Activity</button>
+        <section className="recent-activity">{recentFeedItems}</section>
       </div>
     </div>
   );

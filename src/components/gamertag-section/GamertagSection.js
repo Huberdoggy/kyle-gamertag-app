@@ -4,12 +4,12 @@ export function GamertagSection(props) {
     <section className="gt-section">
       <div className="bio">
         <h1>
-          {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <img
             id="gt-icon"
             src={`${window.location.origin}/images/gt-icon.png`}
             height="75px"
             width="75px"
+            alt="gears-icon"
           />
           XXtheBR
         </h1>
