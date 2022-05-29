@@ -59,7 +59,7 @@ body {
   /*margin-left: auto;*/
 }
 
-#bio {
+.bio {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,16 +68,16 @@ body {
   /*margin-left: auto;*/
 }
 
-#bio h3 > span {
+.bio h3 > span {
   font-weight: 400;
   color: rgb(29, 138, 42);
 }
 
-#bio h3:nth-of-type(1) {
-  margin-top: auto;
+.bio h3:nth-of-type(1) {
+  margin-top: 50px;
 }
 
-#bio h1 {
+.bio h1 {
   color: rgb(29, 138, 42);
   font-weight: 900;
 }
@@ -88,12 +88,9 @@ body {
   margin-right: -1px;
 }
 
-#offline {
-  color: red;
-}
 
 @media screen and (max-width: 990px) {
-#gt-icon, #bio {
+#gt-icon, .bio {
   display: none;
 }
 }

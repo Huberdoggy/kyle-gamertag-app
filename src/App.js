@@ -6,15 +6,15 @@ import gamertagData from './components/gamertag-section/GamertagData';
 import { getAPIData } from './components/gamertag-section/GamertagFetch';
 
 function App() {
+  getAPIData();
   const bio_items = gamertagData.map((item) => {
     return (
       <GamertagSection
         key={item.id}
         name={item.name}
-        bio={item.bio}
+        motto={item.motto}
         location={item.location}
         gender={item.gender}
-        online={item.online}
       />
     );
   });

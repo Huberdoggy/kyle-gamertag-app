@@ -1,6 +1,4 @@
-# Due to the fact my API key is still in this file
-/src/components/gamertag-section/GamertagFetch.js
-
+/**/apiSecrets.js
 /.idea
 # dependencies
 /node_modules

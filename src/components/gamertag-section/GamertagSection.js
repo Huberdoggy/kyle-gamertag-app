@@ -1,12 +1,8 @@
 export function GamertagSection(props) {
-  // const { name, bio, location, gender } = props;
-  let online_status = false;
-  if (props.online) {
-    online_status = true;
-  }
+  // const { name, motto, location, gender } = props;
   return (
     <section className="gt-section">
-      <p id="bio">
+      <div className="bio">
         <h1>
           {/* eslint-disable-next-line jsx-a11y/alt-text */}
           <img
@@ -22,7 +18,7 @@ export function GamertagSection(props) {
         </h3>
         <br />
         <h3>
-          Bio: <span>{props.bio}</span>
+          Bio: <span>{props.motto}</span>
         </h3>
         <br />
         <h3>
@@ -32,15 +28,12 @@ export function GamertagSection(props) {
         <h3>
           Gender: <span>{props.gender}</span>
         </h3>
-        <br />
-        {!online_status && <h3 id="offline">Offline</h3>}
-      </p>
+      </div>
       <iframe
         id="boot-animation"
         title="boot-animation"
         src="https://www.youtube.com/embed/NrGz84kWMOU?autoplay=1&mute=1&loop=1&playlist=NrGz84kWMOU"
       />
-
       <img
         src={`${window.location.origin}/images/avatar-body.png`}
         alt="my-avatar"
