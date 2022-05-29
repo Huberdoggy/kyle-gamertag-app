@@ -13,9 +13,10 @@ import { RecentFeed } from './components/recent-feed/RecentFeed';
 function App() {
   const [activityArray, SetActivityArray] = useState([]);
   const [click, setClick] = useState('');
+  const [bool, setBool] = useState(false);
 
-  const onButtonClick = () => {
-    setClick(getXboxRecentFeed);
+  const setFlag = () => {
+    setBool((prevState) => !prevState);
   };
 
   function addObjToArray(dataObj) {
@@ -36,6 +37,13 @@ function App() {
       addObjToArray(cheevoObj);
     }
   }
+
+  const onButtonClick = () => {
+    setFlag();
+    const callback = getXboxRecentFeed();
+    setClick(() => callback);
+    // setClick(getXboxRecentFeed);
+  };
 
   const recentFeedItems = activityArray.map((item, index) => {
     return (
@@ -66,7 +74,7 @@ function App() {
 
   return (
     <div className="flex-container">
-      <Navbar onButtonClick={onButtonClick} />
+      <Navbar onButtonClick={onButtonClick} setFlag={bool} />
       {bio_items}
       <div>
         {/* eslint-disable-next-line react/button-has-type */}
