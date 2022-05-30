@@ -7,8 +7,16 @@ export function Navbar({ onButtonClick, setFlag }) {
         alt="seriesx-logo"
       />
       {!setFlag && (
-        // eslint-disable-next-line react/button-has-type
-        <button onClick={onButtonClick}>See Kyle's Recent Activity</button>
+        <>
+          <span>Click For Kyle's Recent Activity</span>
+          {/* eslint-disable-next-line react/button-has-type */}
+          <button className="navbar--btn" onClick={onButtonClick}>
+            <img
+              src={`${window.location.origin}/images/a_btn_ico.png`}
+              alt=""
+            />
+          </button>
+        </>
       )}
       <h3 id="card-heading">Huberdoggy's Gamercard</h3>
     </nav>

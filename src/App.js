@@ -76,7 +76,12 @@ function App() {
     <div className="flex-container">
       <Navbar onButtonClick={onButtonClick} setFlag={bool} />
       {bio_items}
-      <div>
+      <div
+        style={{
+          backgroundImage: `url('${window.location.origin}/images/waves.png')`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}>
         {/* eslint-disable-next-line react/button-has-type */}
         <section className="recent-activity">{recentFeedItems}</section>
       </div>
