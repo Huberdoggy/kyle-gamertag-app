@@ -28,11 +28,11 @@ function App() {
   async function getXboxRecentFeed() {
     let cheevoObj;
     const recentActivity = await runFetch(recentActivityEndpoint);
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < recentActivity.length; i++) {
       cheevoObj = {
-        achievementDescription: `${recentActivity[i].achievementDescription}`,
-        description: `${recentActivity[i].description}`,
-        achievementIcon: `${recentActivity[i].achievementIcon}`,
+        achievementDescription: `${recentActivity[i]?.achievementDescription}`,
+        description: `${recentActivity[i]?.description}`,
+        achievementIcon: `${recentActivity[i]?.achievementIcon}`,
       };
       addObjToArray(cheevoObj);
     }

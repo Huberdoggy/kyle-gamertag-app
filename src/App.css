@@ -108,6 +108,7 @@ body {
 .recent-activity {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .recent-activity > p {
